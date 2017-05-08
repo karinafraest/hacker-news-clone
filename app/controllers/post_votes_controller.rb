@@ -1,0 +1,3 @@
+class PostVotesController < ApplicationController
+
+end
