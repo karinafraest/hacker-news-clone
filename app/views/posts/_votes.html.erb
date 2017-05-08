@@ -8,7 +8,7 @@
 <%= post.votes.size %>
 </div>
 <div class="vote downvote">
-<%= link_to post_vote_path(post, current_vote(post)), method: :delete do %>
+<%= link_to post_vote_path(post,1), method: :delete do %>
 <%= image_tag "down.svg", size: "10x10" %>
 <% end %>
 </div>
