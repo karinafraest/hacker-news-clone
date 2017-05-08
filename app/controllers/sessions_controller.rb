@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     @user = User.authenticate(params[:user][:username], params[:user][:hashed_password])
     if !@user.nil?
       session[:user_id] = @user.id
-      redirect_to articles_path
+      redirect_to posts_path
     else
       render 'new'
     end

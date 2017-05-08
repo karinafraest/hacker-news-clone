@@ -9,6 +9,20 @@
   </head>
 
   <body>
+  <!-- Fixed navbar -->
+    <nav>
+<ul class= "navbar">
+  <li><a href="/"> Hacker news</a></li>
+  <% if current_user %>
+  <li><a href="/posts/new" class="new-post"> submit </a></li>
+  <li><a href="/users/<%= current_user.id %>/comments"><%= current_user.username %> </li>
+  <li><a href="/sessions/logout">Logout</a></li>
+  <% else %>
+  <li><a href="/users/new" class="new-user">Register</a></li>
+  <li><a href="/sessions/new" class="login-user">Login</a></li>
+  <% end %>
+</ul>
+</nav>
     <%= yield %>
   </body>
 </html>

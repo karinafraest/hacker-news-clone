@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    has_many :posts, foreign_key: :author_id
 
     validates :username, presence: true, uniqueness: true
     validates :hashed_password, presence: true
