@@ -1,14 +1,14 @@
 <div class="votes">
 <div class="vote upvote">
-<%= link_to root_path do %>
+<%= link_to post_votes_path(post), :method => :post do %>
 <%= image_tag "up.svg", size: "10x10"%>
 <% end %>
 </div>
 <div class="vote count">
-3
+<%= post.votes.size %>
 </div>
 <div class="vote downvote">
-<%= link_to root_path do %>
+<%= link_to post_vote_path(post, current_vote(post)), method: :delete do %>
 <%= image_tag "down.svg", size: "10x10" %>
 <% end %>
 </div>
