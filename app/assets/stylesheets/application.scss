@@ -1,5 +1,21 @@
 @import "bootstrap";
+.navigationbar{
+  list-style-type: none;
+  margin: 0;
+  padding:10px;
+}
+.navi {
+  display: inline;
+}
+.navi a {
+  display: inline;
+  margin: 10px;
+  padding: 8px;
+}
 
+.navi a:visited{
+  color: black;
+}
 .votes {
   display: inline;
   float: left;
