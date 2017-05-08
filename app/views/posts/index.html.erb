@@ -1,6 +1,8 @@
 <div class="all-posts">
 <% @posts.each do |post| %>
-  <span><%= post.id%></span><a href="<%= post.url %>"><%= post.title %></a><br>
+<div class ="actual-post">
+  <%= render partial: 'votes', locals: {post: post} %><span><%= post.id%>. </span><a href="<%= post.url %>"><%= post.title %></a><br>
   <span><%= link_to "#{post.comments.size} comments" , post_path(post) %></span>
+  </div>
 <% end %>
 </div>
