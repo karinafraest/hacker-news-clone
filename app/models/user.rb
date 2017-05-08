@@ -1,4 +1,3 @@
-
 class User < ApplicationRecord
 
     validates :username, presence: true, uniqueness: true
@@ -11,5 +10,13 @@ class User < ApplicationRecord
     def password=(new_password)
       @password = BCrypt::Password.create(new_password)
       self.hashed_password = @password
+    end
+
+    def self.authenticate(username, given_password)
+      user = User.find_by(username: username)
+      if !user.nil? && user.password = given_password
+        return user
+      end
+      return nil
     end
 end

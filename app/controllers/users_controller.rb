@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(username: params[:user][:username])
     @user.password= params[:user][:hashed_password]
     if @user.save
-      redirect_to new_sessions_path
+      redirect_to new_session_path
     else
       render 'new'
     end
