@@ -1,0 +1,19 @@
+<h1>Log in </h1>
+<%= form_for :user, url: sessions_path do |f| %>
+  <ul>
+    <% @user.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+  <p>
+    <%= f.label :username %><br>
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :password %><br>
+    <%= f.password_field :hashed_password %><br>
+  </p>
+  <p>
+    <%= f.submit 'Log in' %>
+  </p>
+<% end %>
