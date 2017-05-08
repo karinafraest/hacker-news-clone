@@ -1,4 +1,7 @@
 <div>
   <h5>Comment by <%= comment.author.username %></h5>
   <p><%= comment.description %></p>
+  <% if current_user %>
+  <%= link_to 'edit', edit_post_comment_path(@post, comment) %>
+  <% end %>
 </div>
