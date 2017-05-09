@@ -15,7 +15,7 @@
         <li class="<%= 'active' if current_page?(root_path) %> navi"><%= link_to "Hacker Clone", root_path %></li>
         <% if current_user %>
           <li class="navi"><a href="/posts/new"> submit </a></li>
-          <li class="navi"><a href="/users/<%= current_user.id %>/comments"><%= current_user.username %> </li>
+          <li class="navi"><%= current_user.username %> </li>
           <li class="navi"><%= link_to "Log out", "/sessions/#{current_user.id}", method: :delete %></li>
         <% else %>
           <li class="navi"><a href="/users/new" class="new-user">Register</a></li>
